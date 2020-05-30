@@ -1,34 +1,23 @@
-# Ghost Starter Theme
+# Entwurfhaus Ghost Theme
 
-A starter framework for Ghost themes! Fork this repository and start your development here with all the main things you need to develop a custom Ghost theme.
+A Ghost theme, built for the [Entwurfhaus](https://entwurfhaus.com) website. It is using the TailwindCSS, a highly customizable, low-level CSS framework.
 
-&nbsp;
+# Summary
 
-# First time using a Ghost theme?
-
-Ghost uses a simple templating language called [Handlebars](http://handlebarsjs.com/) for its themes.
-
-We've documented our default theme pretty heavily so that it should be fairly easy to work out what's going on just by reading the code and the comments. Once you feel comfortable with how everything works, we also have full [theme API documentation](https://themes.ghost.org) which explains every possible Handlebars helper and template.
-
-**The main files are:**
-
-- `default.hbs` - The main template file
-- `index.hbs` - Used for the home page
-- `post.hbs` - Used for individual posts
-- `page.hbs` - Used for individual pages
-- `tag.hbs` - Used for tag archives
-- `author.hbs` - Used for author archives
-
-One neat trick is that you can also create custom one-off templates just by adding the slug of a page to a template file. For example:
-
-- `page-about.hbs` - Custom template for the `/about/` page
-- `tag-news.hbs` - Custom template for `/tag/news/` archive
-- `author-ali.hbs` - Custom template for `/author/ali/` archive
-
+This template was forked from the [TryGhost/Starter](https://github.com/TryGhost/Starter) resource. The goal is to utilize TailwindCSS, for building a custom Ghost theme.
 
 # Development
 
-Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
+## Overview
+
+Styles are compiled using Gulp/PostCSS to polyfill future CSS spec. This project requires:
+
+1. [Node](https://nodejs.org/)
+1. [Yarn](https://yarnpkg.com/) 
+1. [Gulp](https://gulpjs.com)
+1. [TailwindCSS](https://tailwindcss.com)
+
+After that, from the theme's root directory:
 
 ```bash
 # Install
@@ -38,21 +27,68 @@ yarn
 $ yarn dev
 ```
 
-Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
+Next, edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
 
 The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
 ```bash
+# Run to create a Ghost theme deployment package
 yarn zip
 ```
 
-# PostCSS Features Used
+## Process
 
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-- Variables - Simple pure CSS variables
-- [Color Function](https://github.com/postcss/postcss-color-function)
+1. Using yarn, install the ``ghost-cli`` as below:
+    ```bash
+    yarn global add ghost-cli@latest
+    ```
+1. Create a new local Ghost project. For example:
+    ```bash
+    # Tip: Do not name your project 'ghost'
+    mkdir awesome-ghost
+    cd awesome-ghost
 
+    # Run the install command, it will automatically start
+    ghost install local
+    ```
+1. If you need to further manage your local ``ghost``, there are some useful commands below:
 
-# Copyright & License
+    ```bash
+    # Stop ghost
+    ghost stop
 
-Copyright (c) 2013-2020 Ghost Foundation - Released under the [MIT license](LICENSE).
+    # Start ghost
+    ghost start
+
+    # View logs
+    ghost log
+
+    # List all running Ghost blogs
+    ghost ls
+    ```
+1. Finally, a simple local development process can be achieved by placing your Ghost theme into the ``themes`` folder, such as ``content\themes\awesome-ghost-theme``. It is from there, using ``yarn dev`` while you're previewing your theme changes on the locally hosted ``awesome-ghost``.    
+
+# Testing
+
+Validating your Ghost theme is handled efficiently with the [GScan tool](https://gscan.ghost.org/). GScan will check your theme for errors, deprecations and compatibility issues. GScan is used in several ways:
+
+1. The [GScan site](https://gscan.ghost.org/) is your first port of call to test any themes that you're building to get a full validation report
+
+1. When a theme is uploaded in Ghost admin, it will automatically be checked with gscan and any fatal errors will prevent the theme from being used
+
+1. gscan is also used as a command line tool
+
+## Command line
+
+To use GScan as a command line tool, globally install the ``gscan`` npm package:
+
+```bash
+# Install the npm package
+npm install -g gscan
+
+# Use gscan <file path> anywhere to run gscan against a folder
+gscan /path/to/ghost/content/themes/casper
+
+# Run gscan on a zip file
+gscan -z /path/to/download/theme.zip
+```
