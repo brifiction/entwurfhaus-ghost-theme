@@ -1,5 +1,7 @@
 # Entwurfhaus Ghost Theme
 
+![Deploy Theme](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Deploy%20Theme/badge.svg) ![Test](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Test/badge.svg)
+
 A Ghost theme, built for the [Entwurfhaus](https://entwurfhaus.com) website. It is using the TailwindCSS, a highly customizable, low-level CSS framework.
 
 # Summary
