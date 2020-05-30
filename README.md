@@ -88,7 +88,7 @@ Below are the steps on how to configure **Deploy Theme**:
 1. Proceed to Settings > Integration. Then, add a new Integration.
 1. Click the newly created Integration, and copy/paste both **Content API Key** (it is a randomly generated string of text) and **API URL**.
 
-    ![image info](./.github/workflows/github-workflows.jpg)
+    ![image info](./github-workflows.jpg)
 1. Once you have both, proceed to log into your GitHub account and navigate to your Ghost custom theme repository.
 
     > 🤔 Please note that GitHub settings UI/UX layout gets updated throughout the years and the following steps may become unreliable.
