@@ -1,6 +1,6 @@
 # Entwurfhaus Ghost Theme 👻
 
-![Deploy Theme](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Deploy%20Theme/badge.svg) ![Test](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Test/badge.svg)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/brifiction/entwurfhaus-ghost-theme?color=green&label=release&style=flat-square) ![GitHub package.json version](https://img.shields.io/github/package-json/v/brifiction/entwurfhaus-ghost-theme?color=green&label=package&style=flat-square) ![Deploy Theme](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Deploy%20Theme/badge.svg) ![Test](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Test/badge.svg)
 
 A Ghost theme, built for the [Entwurfhaus](https://entwurfhaus.com) website. It is using the TailwindCSS, a highly customizable, low-level CSS framework.
 
