@@ -1,7 +1,7 @@
 {
-    "name": "ghost-starter-theme",
+    "name": "entwurfhaus-starter-theme",
     "description": "A custom theme for ghost",
-    "demo": "https://starter.ghost.io",
+    "demo": "https://entwurfhaus.com",
     "version": "1.0.0",
     "engines": {
         "ghost": ">=3.0.0",
@@ -21,9 +21,9 @@
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Brian Ng",
+        "email": "brian.ng@entwurfhaus.com",
+        "url": "https://entwurfhaus.com"
     },
     "gpm": {
         "type": "theme",
@@ -39,10 +39,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Starter.git"
+        "url": "https://github.com/brifiction/entwurfhaus-ghost-theme.git"
     },
-    "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
+    "bugs": "https://github.com/brifiction/entwurfhaus-ghost-theme/issues",
+    "contributors": "https://github.com/brifiction/entwurfhaus-ghost-theme/graphs/contributors",
     "devDependencies": {
         "autoprefixer": "9.8.0",
         "cssnano": "4.1.10",
@@ -57,7 +57,8 @@
         "gulp-zip": "5.0.1",
         "postcss-color-function": "4.1.0",
         "postcss-custom-properties": "9.1.1",
-        "postcss-easy-import": "3.0.0"
+        "postcss-easy-import": "3.0.0",
+        "tailwindcss": "^1.4.6"
     },
     "browserslist": [
         "defaults"
