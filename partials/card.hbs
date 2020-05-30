@@ -2,24 +2,31 @@
 Re-usable card for linking to posts
 --}}
 
-<article class="gh-card {{post_class}} {{#if feature_image}}with-image{{else}}no-image{{/if}}">
-    <a class="gh-card-link" href="{{url}}">
+<div class="m-2 max-w-sm rounded overflow-hidden shadow-lg {{post_class}} {{#if feature_image}}with-image{{else}}no-image{{/if}}">
+    <a class="" href="{{url}}" alt="{{title}}">
         {{#if feature_image}}
-            <img class="gh-card-image"
-                srcset="{{img_url feature_image size="s"}} 300w,
+        <img class="w-full" srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 600w,
                         {{img_url feature_image size="l"}} 1000w,
-                        {{img_url feature_image size="xl"}} 2000w"
-                sizes="(max-width: 1000px) 400px, 700px"
-                src="{{img_url feature_image size="m"}}"
-                alt="{{title}}"
-            />
+                        {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 1000px) 400px, 700px"
+            src="{{img_url feature_image size="m"}}" alt="{{title}}">
         {{/if}}
-        <div class="gh-card-content">
-            <span class="gh-card-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-            <h2 class="gh-card-title">{{title}}</h2>
-            <p>{{excerpt}}</p>
-            <strong>Read more</strong>
+        <div class="flex">
+            <span class="m-auto inline-block py-2 text-sm font-semibold text-gray-700"><time
+                    datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                <span class="bull">&bull;</span> {{reading_time}}</span>
+        </div>
+        <div class="px-6 py-2">
+            {{#if tags}}
+            {{#foreach tags}}
+            <span
+                class="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-600 mr-2">{{name}}</span>
+            {{/foreach}}
+            {{/if}}
+            <div class="font-bold text-xl">{{title}}</div>
+            <p class="text-gray-700 text-base mb-2">
+                {{excerpt}}
+            </p>
         </div>
     </a>
-</article>
+</div>
