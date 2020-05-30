@@ -1,6 +1,6 @@
 # Entwurfhaus Ghost Theme 👻
 
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/brifiction/entwurfhaus-ghost-theme?color=green&label=release&style=flat-square) ![GitHub package.json version](https://img.shields.io/github/package-json/v/brifiction/entwurfhaus-ghost-theme?color=green&label=package&style=flat-square) ![Deploy Theme](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Deploy%20Theme/badge.svg) ![Test](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Test/badge.svg)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/brifiction/entwurfhaus-ghost-theme?color=green&label=release&logo=github&style=flat-square) ![GitHub package.json version](https://img.shields.io/github/package-json/v/brifiction/entwurfhaus-ghost-theme?color=green&label=package&logo=npm&style=flat-square) 
 
 A Ghost theme, built for the [Entwurfhaus](https://entwurfhaus.com) website. It is using the TailwindCSS, a highly customizable, low-level CSS framework.
 
@@ -71,6 +71,8 @@ yarn zip
 1. Finally, a simple local development process can be achieved by placing your Ghost theme into the ``themes`` folder, such as ``content\themes\awesome-ghost-theme``. It is from there, using ``yarn dev`` while you're previewing your theme changes on the locally hosted ``awesome-ghost``.    
 
 ## Github Workflows
+
+![Github Workflow Status](https://img.shields.io/github/workflow/status/brifiction/entwurfhaus-ghost-theme/Deploy%20Theme?label=Deploy%20Theme&logo=github&style=flat-square) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/brifiction/entwurfhaus-ghost-theme/Test?label=Github%20Workflow%20Test&logo=github&style=flat-square)
 
 There are two pre-defined GitHub workflows, **Deploy Theme** and **Test**. 
 
