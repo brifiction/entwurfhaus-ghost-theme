@@ -2,7 +2,8 @@
 Re-usable card for linking to posts
 --}}
 
-<div class="m-2 max-w-sm rounded overflow-hidden shadow-lg {{post_class}} {{#if feature_image}}with-image{{else}}no-image{{/if}}">
+<div
+    class="mx-auto m-2 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl rounded overflow-hidden shadow-lg {{post_class}} {{#if feature_image}}with-image{{else}}no-image{{/if}}">
     <a class="" href="{{url}}" alt="{{title}}">
         {{#if feature_image}}
         <img class="w-full" srcset="{{img_url feature_image size="s"}} 300w,
@@ -17,13 +18,15 @@ Re-usable card for linking to posts
                 <span class="bull">&bull;</span> {{reading_time}}</span>
         </div>
         <div class="px-6 py-2">
-            {{#if tags}}
-            {{#foreach tags}}
-            <span
-                class="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-600 mr-2">{{name}}</span>
-            {{/foreach}}
-            {{/if}}
-            <div class="font-bold text-xl">{{title}}</div>
+            <div class="flex py-2">
+                {{#if tags}}
+                {{#foreach tags}}
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-600 mr-2">{{name}}</span>
+                {{/foreach}}
+                {{/if}}
+            </div>
+            <div class="font-bold text-xl py-2">{{title}}</div>
             <p class="text-gray-700 text-base mb-2">
                 {{excerpt}}
             </p>

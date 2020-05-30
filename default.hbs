@@ -30,7 +30,7 @@
             {{navigation}}
         </nav>
 
-        <main class="flex-grow p-8">
+        <main class="flex-grow justify-center p-8">
 
             {{{body}}}
             {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
@@ -38,14 +38,13 @@
         </main>
 
         <footer class="gh-foot">
-            <div class="gh-foot-menu bg-black text-white text-2xl p-8">
+            <div class="gh-foot-menu bg-black text-white p-8">
                 {{navigation}}
-                <div class="gh-foot-meta">
-                    Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                <div class="gh-foot-meta py-2 text-sm">
+                    Publication source fresh from <a class="font-bold" href="https://entwurfhaus.com" target="_blank" rel="noopener">Entwurfhaus</a>
                 </div>
             </div>
         </footer>
-
 
     </div>
 
@@ -69,6 +68,24 @@
             }
         });
     </script>
+
+    {{#is "post, page"}}
+    <script src="{{asset "built/jquery.fitvids.js"}}"></script>
+    <script>
+        var images = document.querySelectorAll('.kg-gallery-image img');
+        images.forEach(function (image) {
+            var container = image.closest('.kg-gallery-image');
+            var width = image.attributes.width.value;
+            var height = image.attributes.height.value;
+            var ratio = width / height;
+            container.style.flex = ratio + ' 1 0%';
+        });
+        $(document).ready(function () {
+            var $postContent = $(".gh-content");
+            $postContent.fitVids();
+        });
+    </script>
+    {{/is}}
 
     {{ghost_foot}}
     {{!-- Outputs important scripts - should always be included before closing body tag --}}
