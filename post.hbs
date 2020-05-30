@@ -2,52 +2,99 @@
 
 {{#post}}
 
-<article class="gh-article {{post_class}}">
+<!--Container-->
+<div class="container w-full md:max-w-3xl mx-auto pt-20">
 
-    <header class="gh-header gh-canvas">
-        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-        <h1 class="gh-title">{{title}}</h1>
+    <div class="gh-article {{post_class}} w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
 
-        {{#if custom_excerpt}}
-        <p class="gh-excerpt">{{custom_excerpt}}</p>
-        {{/if}}
+        <!--Title-->
+        <div class="font-sans">
+            <span class="text-base md:text-sm text-black font-bold">
+                <a href="/" class="text-base md:text-sm text-gray-500 font-bold no-underline hover:underline">BACK TO
+                    BLOG</a></p>
+                {{#if feature_image}}
+                <img class="gh-feature-image" src="{{feature_image}}" alt="{{title}}" />
+                {{/if}}
+                <h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">{{title}}</h1>
+                {{#if custom_excerpt}}
+                <p class="font-sans break-normal text-black pt-2 pb-2 text-l/2 md:text-l">{{custom_excerpt}}</p>
+                {{/if}}
+                <p class="text-sm md:text-base font-normal text-gray-600">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                    <span class="bull">&bull;</span> {{reading_time}}
+            </span>
+            </p>
+        </div>
 
-        {{#if feature_image}}
-            <img class="gh-feature-image" src="{{feature_image}}" alt="{{title}}" />
-        {{/if}}
-    </header>
+        <!--Post Content-->
 
-    <div class="gh-content gh-canvas">
-        {{content}}
+        <div class="gh-content gh-canvas">
+            {{content}}
+        </div>
+
+        <!--/ Post Content-->
+
     </div>
 
-    <footer class="gh-footer gh-canvas">
+    <!--Tags -->
+    <div class="text-base md:text-sm text-gray-500 px-4 py-6">
+        Tags:
+        {{#if tags}}
+        {{#foreach tags}}
+        <a href="{{url}}" class="text-base md:text-sm text-teal-500 no-underline hover:underline">{{name}}</a>
+        {{/foreach}}
+        {{/if}}
+    </div>
 
-        <div class="gh-post-authors">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+    <!--Divider-->
+    <hr class="border-b-2 border-gray-400 mx-4">
+
+    <!--Author-->
+    <div class="flex w-full items-center font-sans px-4 py-8">
+        {{#foreach authors}}
+        {{#if profile_image}}
+        <img class="w-10 h-10 rounded-full mr-4" src="{{profile_image}}" alt="{{name}}" />
+        {{/if}}
+        <div class="flex-1 px-2">
+            <p class="text-base font-bold text-base md:text-xl leading-none mb-2">{{name}}</p>
+            <p class="text-gray-600 text-xs md:text-base">{{bio}}</p>
         </div>
-
-        {{!--
-        <section class="gh-post-comments">
-            If you want to embed comments, this is a good place to do it!
-        </section>
-        --}}
-
-    </footer>
-
-</article>
-
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+        <div class="justify-end">
+            <a href="{{url}}" alt="{{name}}"
+                class="bg-transparent border border-gray-500 hover:border-teal-500 text-xs text-gray-500 hover:text-teal-500 font-bold py-2 px-4 rounded-full">Read
+                More</a>
         </div>
-        <div class="gh-readmore-prev">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
+        {{/foreach}}
+    </div>
+    <!--/Author-->
+
+    <!--Divider-->
+    <hr class="border-b-2 border-gray-400 mb-8 mx-4">
+
+    <!--Next & Prev Links-->
+    <div class="font-sans flex justify-between content-center px-4 pb-12">
+        <div class="text-left">
+            {{#prev_post}}
+            <span class="text-xs md:text-sm font-normal text-gray-600">{{> "icons/arrow-left"}} Previous Post</span><br>
+            <p><a href="{{url}}"
+                    class="break-normal text-base md:text-sm text-teal-500 font-bold no-underline hover:underline">{{title}}</a>
+            </p>
+            {{/prev_post}}
+        </div>
+        <div class="text-right">
+            {{#next_post}}
+            <span class="text-xs md:text-sm font-normal text-gray-600">{{> "icons/arrow-right"}} Next Post</span><br>
+            <p><a href="{{url}}"
+                    class="break-normal text-base md:text-sm text-teal-500 font-bold no-underline hover:underline">{{title}}</a>
+            </p>
+            {{/next_post}}
         </div>
     </div>
-</aside>
+
+
+    <!--/Next & Prev Links-->
+
+</div>
+<!--/container-->
 
 {{/post}}

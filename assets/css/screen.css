@@ -8,11 +8,15 @@ production stylesheet in assets/built/screen.css using: gulp dev
 /* Lib - Local component imports
 /* ---------------------------------------------------------- */
 
+/* TailwindCSS */
 @import "tailwindcss/base";
-
 @import "tailwindcss/components";
-
 @import "tailwindcss/utilities";
+
+/* Ghost components */
+@import "ghost/content.css";
+
 
 /* Main - Your styles here! Edit below
 /* ---------------------------------------------------------- */
+
