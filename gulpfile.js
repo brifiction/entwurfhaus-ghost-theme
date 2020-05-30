@@ -41,6 +41,7 @@ function css(done) {
         easyimport,
         customProperties({preserve: false}),
         colorFunction(),
+        require('tailwindcss'),
         autoprefixer(),
         cssnano()
     ];
