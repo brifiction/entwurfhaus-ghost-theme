@@ -1,17 +1,25 @@
 {{#if isSecondary}}
-<h1>Secondary</h1>
-<ul class="nav" role="menu">
-    {{#foreach navigation}}
-    <li class="nav-{{slug}}" role="menuitem">
-        <a href="{{url}}">
-            <svg class="icon" role="img" aria-label="{{slug}} icon">
-                <title>{{slug}}</title>
-                <use xlink:href="#{{slug}}"></use>
-            </svg>
+<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow">
+        {{#foreach navigation}}
+        <a href="{{url absolute="true"}}"
+            class="{{link_class for=(url) class=(concat "nav-" slug)}} block mt-4 inline-block mt-0 text-white hover:text-blue-light mr-4">
+            {{label}}
         </a>
-    </li>
-    {{/foreach}}
-</ul>
+        {{/foreach}}
+    </div>
+    <div class="hidden md:block lg:block">
+        {{#if @site.facebook}}
+        <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank"
+            rel="noopener">{{> "icons/facebook"}}</a>
+        {{/if}}
+        {{#if @site.twitter}}
+        <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">{{> "icons/twitter"}}</a>
+        {{/if}}
+        <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank"
+            rel="noopener">{{> "icons/rss"}}</a>
+    </div>
+</div>
 {{else}}
 <div class="block lg:hidden">
     <button id="nav-toggle"
