@@ -85,5 +85,8 @@
                 "width": 2000
             }
         }
+    },
+    "dependencies": {
+        "lodash.template": "^4.5.0"
     }
 }
