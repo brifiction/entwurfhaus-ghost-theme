@@ -1,4 +1,4 @@
-# Entwurfhaus Ghost Theme
+# Entwurfhaus Ghost Theme 👻
 
 ![Deploy Theme](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Deploy%20Theme/badge.svg) ![Test](https://github.com/brifiction/entwurfhaus-ghost-theme/workflows/Test/badge.svg)
 
@@ -6,7 +6,7 @@ A Ghost theme, built for the [Entwurfhaus](https://entwurfhaus.com) website. It 
 
 # Summary
 
-This template was forked from the [TryGhost/Starter](https://github.com/TryGhost/Starter) resource. The goal is to utilize TailwindCSS, for building a custom Ghost theme.
+This template was forked from the [TryGhost/Starter](https://github.com/TryGhost/Starter) ✌️ resource. The goal is to utilize TailwindCSS, for building a custom Ghost theme.
 
 # Development
 
@@ -69,6 +69,55 @@ yarn zip
     ghost ls
     ```
 1. Finally, a simple local development process can be achieved by placing your Ghost theme into the ``themes`` folder, such as ``content\themes\awesome-ghost-theme``. It is from there, using ``yarn dev`` while you're previewing your theme changes on the locally hosted ``awesome-ghost``.    
+
+## Github Workflows
+
+There are two pre-defined GitHub workflows, **Deploy Theme** and **Test**. 
+
+1. **Deploy Theme** allows automatic deployment of your custom Ghost theme, to your designated Ghost website.
+1. **Test** just utilizes ``gscan`` and nothing fancy there.
+
+> 🔨 Please feel free to customize these GitHub workflow yaml configurations to your desired needs.
+
+## Deploy Theme
+
+To configure **Deploy Theme** workflow, you will first need to create a new **Integration** in your Ghost.
+
+Below are the steps on how to configure **Deploy Theme**:
+1. Log in to your Ghost Admin.
+1. Proceed to Settings > Integration. Then, add a new Integration.
+1. Click the newly created Integration, and copy/paste both **Content API Key** (it is a randomly generated string of text) and **API URL**.
+
+    ![image info](./.github/workflows/github-workflows.jpg)
+1. Once you have both, proceed to log into your GitHub account and navigate to your Ghost custom theme repository.
+
+    > 🤔 Please note that GitHub settings UI/UX layout gets updated throughout the years and the following steps may become unreliable.
+
+1. When you're at your project repository, proceed to Settings > Secrets. 
+1. Once there, you will need to create two Secrets, enter the value for each Secret and click Save. 
+   
+   Below shows the matching information you've obtained from Ghost Admin:
+    1. GHOST_ADMIN_API_URL = API URL
+    1. GHOST_ADMIN_API_KEY = Content API Key
+1. Now, you are ready to give it a try. To test, you would have to review on how you've set when your actions are triggered (such as on:push in the ``master`` branch), or you could trigger it manually via GitHub. As of this point, you're the boss! 👍
+
+    ```yaml
+    name: Deploy Theme
+    on:
+    push:
+        branches:
+        - master
+    jobs:
+    deploy:
+        runs-on: ubuntu-18.04
+        steps:
+        - uses: actions/checkout@master
+        - name: Deploy Ghost Theme
+            uses: TryGhost/action-deploy-theme@v1.2.0
+            with:
+            api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+            api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+    ```
 
 # Testing
 
