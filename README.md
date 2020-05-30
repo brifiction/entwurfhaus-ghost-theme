@@ -4,11 +4,11 @@
 
 A Ghost theme, built for the [Entwurfhaus](https://entwurfhaus.com) website. It is using the TailwindCSS, a highly customizable, low-level CSS framework.
 
-# Summary
+# Summary 📰
 
 This template was forked from the [TryGhost/Starter](https://github.com/TryGhost/Starter) ✌️ resource. The goal is to utilize TailwindCSS, for building a custom Ghost theme.
 
-# Development
+# Development 🔨
 
 ## Overview
 
@@ -70,7 +70,7 @@ yarn zip
     ```
 1. Finally, a simple local development process can be achieved by placing your Ghost theme into the ``themes`` folder, such as ``content\themes\awesome-ghost-theme``. It is from there, using ``yarn dev`` while you're previewing your theme changes on the locally hosted ``awesome-ghost``.    
 
-## Github Workflows
+## Github Workflows ⚙️
 
 ![Github Workflow Status](https://img.shields.io/github/workflow/status/brifiction/entwurfhaus-ghost-theme/Deploy%20Theme?label=Deploy%20Theme&logo=github&style=flat-square) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/brifiction/entwurfhaus-ghost-theme/Test?label=Github%20Workflow%20Test&logo=github&style=flat-square)
 
@@ -81,7 +81,7 @@ There are two pre-defined GitHub workflows, **Deploy Theme** and **Test**.
 
 > 🔨 Please feel free to customize these GitHub workflow yaml configurations to your desired needs.
 
-## Deploy Theme
+### Workflow: Deploy Theme
 
 To configure **Deploy Theme** workflow, you will first need to create a new **Integration** in your Ghost.
 
@@ -121,7 +121,7 @@ Below are the steps on how to configure **Deploy Theme**:
             api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
     ```
 
-# Testing
+# Testing 🤷‍♂
 
 Validating your Ghost theme is handled efficiently with the [GScan tool](https://gscan.ghost.org/). GScan will check your theme for errors, deprecations and compatibility issues. GScan is used in several ways:
 
@@ -131,7 +131,7 @@ Validating your Ghost theme is handled efficiently with the [GScan tool](https:/
 
 1. gscan is also used as a command line tool
 
-## Command line
+## Command line 💻
 
 To use GScan as a command line tool, globally install the ``gscan`` npm package:
 
@@ -145,3 +145,7 @@ gscan /path/to/ghost/content/themes/casper
 # Run gscan on a zip file
 gscan -z /path/to/download/theme.zip
 ```
+
+# Thank you ❤️
+
+I want to thank the developers working hard out there, without your love of coding and sharing I would be lost without you ❤️. Happy coding 😄 and stay healthy 🍻!
