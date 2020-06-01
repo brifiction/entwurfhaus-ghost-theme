@@ -58,7 +58,7 @@
         "postcss-color-function": "4.1.0",
         "postcss-custom-properties": "9.1.1",
         "postcss-easy-import": "3.0.0",
-        "tailwindcss": "^1.4.6"
+        "tailwindcss": "1.4.6"
     },
     "browserslist": [
         "defaults"
@@ -87,6 +87,6 @@
         }
     },
     "dependencies": {
-        "lodash.template": "^4.5.0"
+        "lodash.template": "4.5.0"
     }
 }
