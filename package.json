@@ -44,7 +44,7 @@
     "bugs": "https://github.com/brifiction/entwurfhaus-ghost-theme/issues",
     "contributors": "https://github.com/brifiction/entwurfhaus-ghost-theme/graphs/contributors",
     "devDependencies": {
-        "autoprefixer": "9.8.4",
+        "autoprefixer": "9.8.5",
         "cssnano": "4.1.10",
         "gscan": "3.5.4",
         "gulp": "4.0.2",
