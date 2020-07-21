@@ -58,7 +58,7 @@
         "postcss-color-function": "4.1.0",
         "postcss-custom-properties": "9.1.1",
         "postcss-easy-import": "3.0.0",
-        "tailwindcss": "1.5.1"
+        "tailwindcss": "1.5.2"
     },
     "browserslist": [
         "defaults"
